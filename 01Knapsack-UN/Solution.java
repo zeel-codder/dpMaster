@@ -387,8 +387,8 @@ class MinCountCoinChange{
         return ans;
 
     }
-
     public static int dp(int w[],int W){
+        // "z".length()
  
         int n=w.length;
 
@@ -398,9 +398,17 @@ class MinCountCoinChange{
 
         for(int i=1;i<=W;i++){
             memo[0][i]=1000000;
+            
+            if(i%w[0]==0){
+                memo[1][i]=i/w[0];
+            }else{
+                
+                memo[0][i]=1000000;
+            }
 
         }
 
+        
         for(int i=1;i<=n;i++){
 
             for(int j=1;j<=W;j++){
